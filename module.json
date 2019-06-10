@@ -1,0 +1,14 @@
+{
+    "name": "ValidationReseller",
+    "alias": "validationreseller",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\ValidationReseller\\Providers\\ValidationResellerServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
