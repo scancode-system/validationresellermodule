@@ -2,7 +2,7 @@
 
 namespace Modules\ValidationReseller\Validator;
 
-use App\Imports\ValidatorImport;
+use Modules\Portal\Imports\ValidatorImport;
 
 class ResellersValidator extends ValidatorImport
 {	  
