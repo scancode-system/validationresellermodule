@@ -37,10 +37,10 @@ class ValidationResellerServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('validationresseler.php'),
+            __DIR__.'/../Config/config.php' => config_path('validationreseller.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'validationresseler'
+            __DIR__.'/../Config/config.php', 'validationreseller'
         );
     }
 
@@ -51,7 +51,7 @@ class ValidationResellerServiceProvider extends ServiceProvider
      */
     public function registerViews()
     {
-        $viewPath = resource_path('views/modules/validationresseler');
+        $viewPath = resource_path('views/modules/validationreseller');
 
         $sourcePath = __DIR__.'/../Resources/views';
 
@@ -60,8 +60,8 @@ class ValidationResellerServiceProvider extends ServiceProvider
         ],'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/validationresseler';
-        }, \Config::get('view.paths')), [$sourcePath]), 'validationresseler');
+            return $path . '/modules/validationreseller';
+        }, \Config::get('view.paths')), [$sourcePath]), 'validationreseller');
     }
 
 }
