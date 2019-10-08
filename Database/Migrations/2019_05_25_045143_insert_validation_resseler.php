@@ -18,7 +18,7 @@ class InsertValidationResseler extends Migration
                 'alias' => 'representantes',
                 'module_name' => 'ValidationReseller',
                 'module_alias' => 'validationreseller',
-                'video' => 'https://www.youtube.com/watch?v=sd5Rd4LRGgs&t=34s',
+                'video' => 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0',
                 'file' => 'representantes.xlsx',
                 'validation' => 'resellers', 
         ]);
