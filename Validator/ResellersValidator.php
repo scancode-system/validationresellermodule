@@ -20,6 +20,9 @@ class ResellersValidator extends ValidatorImport
 		];
 	}
 
+	public function messages(){
+		return  [];
+	}
 
 	/*protected $required = ['login', 'senha'];
 
