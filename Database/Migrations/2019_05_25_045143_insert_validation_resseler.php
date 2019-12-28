@@ -21,6 +21,7 @@ class InsertValidationResseler extends Migration
                 'video' => 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0',
                 'file' => 'representantes.xlsx',
                 'validation' => 'resellers', 
+                'import' => 'Saller@import'
         ]);
     }
 
