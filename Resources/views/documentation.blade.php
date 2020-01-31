@@ -12,16 +12,16 @@
 							No Portal online da Scancode, poderá preparar seu sistema para o ambiente de produção (feira), de forma que o sistema trabalhe com dados integros e sem corromper o sistema.
 							Aqui no portal poderá validar os seu sistema ERP de forma que corresponde eficientemente com o nosso sistema, com esta documentação será demonstrado a estrutura necessária para a importação e como estas dados devem ser formatados.
 						</p>
-						<a href="{{ route('portal.doc.download.sample', $event_validation) }}" class="btn btn-primary">Arquivo de representantes com exemplos</a>
+						<a href="{{ route('portal.doc.download.sample', $event_validation) }}" class="btn btn-primary">Download da planilha de produtos</a>
 					</div>
 				</div>
-				<h1 class="mb-3">Validação de Representantes</h1>
+				<h1 class="mb-3">Validação de Produtos</h1>
 				<ul>
 					<li class="mb-2"><span class="font-weight-bold">Extensão do Arquivo:</span> Os arquivos devem ter o formato de planiha Excel Micorsoft Word com a extensção "xlsx"</li>
 					<li class="mb-2">
-						<span class="font-weight-bold">Primeira Linha:</span> A primeira linha do arquivo será o <span class="font-weight-bold">cabeçalho</span>, cada coluna conterá um cabeçalho indicando uma determinada propriedade do representante. Atenção quanto a formalização do cabeçalho, todao cabeçalho segue a formatação <i>snake case</i>, isto é letras são em minúsculas é permitido número e cabeçalho com palavras duplas são separadas por underscore "_".
+						<span class="font-weight-bold">Primeira Linha:</span> A primeira linha do arquivo será o <span class="font-weight-bold">cabeçalho</span>, cada coluna conterá um cabeçalho indicando uma determinada propriedade do produto. Atenção quanto a formalização do cabeçalho, todao cabeçalho segue a formatação <i>snake case</i>, isto é letras são em minúsculas é permitido número e cabeçalho com palavras duplas são separadas por underscore "_".
 					</li>
-					<li class="mb-2"><span class="font-weight-bold">Linhas de registro:</span> Após o cabeçalho, toda linha representará um registro único do seu representante, não há um número limite de representantes para o arquivo, coloque quantos representantes forem necessários, preenchendo de acordo com co cabeçalho.</li>
+					<li class="mb-2"><span class="font-weight-bold">Linhas de registro:</span> Após o cabeçalho, toda linha representará um registro único do seu produto, não há um número limite de produtos para o arquivo, coloque quantos produtos forem necessários, preenchendo de acordo com co cabeçalho.</li>
 					<li class="mb-2"><span class="font-weight-bold">Formatação:</span> Toda coluna segue uma determinada formatação, podendo ser alfanúmerica, numérico, número inteiro ou apenas números positivos e até mesmo formatação de data.</li>
 				</ul>
 				<hr>
@@ -31,28 +31,64 @@
 				</p>
 				<ul class="list-group">
 					<li class="list-group-item">
-						<span class="font-weight-bold">id_representante</span> - [opicional, não pode ser vazio, inteiro, valor mínimo 1, único para cada registo]
+						<span class="font-weight-bold">descricao</span> - [obrigatório, não pode ser vazio, texto, máximo 255 caracteres]
 					</li>
 					<li class="list-group-item">
-						<span class="font-weight-bold">nome</span> - [opicional, pode ser vazio, texto, máximo 255 caracteres]
+						<span class="font-weight-bold">descricao_detalhada</span> - [opcional, pode ser vazio, texto]
 					</li>
 					<li class="list-group-item">
-						<span class="font-weight-bold">login</span> - [obrigatório, não pode ser vazio, texto, máximo 100 caracteres, único para cada registro]
+						<span class="font-weight-bold">codigo</span> - [obrigatório, não pode ser vazio, alfanumérico, máximo 40 caracteres e único para cada registro] - Este campo é destinado para o código de barras
 					</li>
 					<li class="list-group-item">
-						<span class="font-weight-bold">senha</span> - [obrigatório, pode ser vazio, texto, máximo 155 caracteres]
+						<span class="font-weight-bold">codigo_2</span> - [obrigatório, não pode ser vazio, alfanumérico, máximo 40 caracteres e único para cada registro] - Este campo é destinado para a referência do produto
 					</li>
 					<li class="list-group-item">
-						<span class="font-weight-bold">cpf_cnpj</span> - [opicional, pode ser vazio, texto, máximo 15 caracteres, único para cada registro]
+						<span class="font-weight-bold">preco</span> - [obrigatório, não pode ser vazio, numérico, máximo duas casas decimais, positivo]
 					</li>
 					<li class="list-group-item">
-						<span class="font-weight-bold">email</span> - [opicional, pode ser vazio, texto, máximo 50 caracteres, formatação padrão de email]
+						<span class="font-weight-bold">preco_varejo</span> - [opicional, pode ser vazio, numérico, máximo duas casas decimais, positivo]
 					</li>
 					<li class="list-group-item">
-						<span class="font-weight-bold">telefone</span> - [opicional, pode ser vazio, texto, máximo 15 caracteres]
+						<span class="font-weight-bold">filial</span> - [opicional, não pode ser vazio, inteiro, valor mínimo 1]
 					</li>
 					<li class="list-group-item">
-						<span class="font-weight-bold">admin</span> - [opicional, não pode ser vazio, inteiro, valor entre 0 e 1]
+						<span class="font-weight-bold">filial_descricao</span> - [opicional, pode ser vazio, texto, máximo 255 caracteres]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">qtd_min</span> - [opicional, não pode ser vazio, inteiro, valor mínimo 1]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">multiplo</span> - [opicional, não pode ser vazio, inteiro, valor mínimo 1]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">desconto_max</span> - [opicional, não pode ser vazio, inteiro, valor mínimo 0]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">desconto_bloquear</span> - [opicional, não pode ser vazio, inteiro, valor entre 0 e 1]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">ipi</span> - [opicional, não pode ser vazio, numérico, máximo duas casas decimais, valor minimo 0]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">produto_base</span> - [opicional, pode ser vazio, inteiro, valor minimo 1]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">disponivel_atual</span> - [obrigatório, não pode ser vazio, inteiro, valor minimo 0]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">data_atual</span> - [obrigatório, não pode ser vazio, data no formato (yyyy-mm-dd)]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">disponivel_futuro</span> - [obrigatório, não pode ser vazio, inteiro, valor minimo 0]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">data_futuro</span> - [obrigatório, não pode ser vazio, data no formato (yyyy-mm-dd)]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">cor</span> - [opicional, pode ser vazio, texto, máximo 255 caracteres]
+					</li>
+					<li class="list-group-item">
+						<span class="font-weight-bold">categoria</span> - [obrigatório, não pode ser vazio, texto, máximo 255 caracteres]
 					</li>
 				</ul>				
 			</div>

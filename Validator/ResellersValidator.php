@@ -12,7 +12,7 @@ class ResellersValidator extends ValidatorImport
 
 	public function rule($data){
 		return  [
-			'id' => ['integer', 'min:1', new NotInCustomRule($this->chunkColumn('id_cliente', 0, $this->row_index-2), 'Duplicado')],
+			'id' => ['integer', 'min:1', new NotInCustomRule($this->chunkColumn('id', 0, $this->row_index-2), 'Duplicado')],
 			'name' => ['filled', 'string', 'max:255', new NotInCustomRule($this->chunkColumn('name', 0, $this->row_index-2), 'Duplicado')],
 			'email' => ['filled', 'string', 'max:255', new NotInCustomRule($this->chunkColumn('email', 0, $this->row_index-2), 'Duplicado')],
 			'goal' => 'numeric|min:0|regex:/^\d+(\.\d{1,2})?$/',
