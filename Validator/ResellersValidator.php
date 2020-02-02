@@ -20,6 +20,12 @@ class ResellersValidator extends ValidatorImport
 		];
 	}
 
+	public function filterRules(){
+		return [
+			['rule' => ['goal' => [new NullRule()]], 'filter' => 'setToZero']
+		];
+	}
+
 	public function messages(){
 		return  [];
 	}
