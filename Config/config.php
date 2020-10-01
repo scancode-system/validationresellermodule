@@ -2,7 +2,7 @@
 
 return [
 	'name' => 'ValidationReseller', 
-	'fields' => ['id', 'name', 'email', 'goal', 'password'],
+	'fields' => ['id', 'name', 'login', 'email', 'goal', 'password'],
 	'sample' => [
 		[
 			'name' => 'id',
@@ -15,7 +15,13 @@ return [
 			'observation' => 'Nome do representante.',
 			'sample_1' => 'pedro',
 			'filled' => true
-		], 
+		],  
+		[
+			'name' => 'login',
+			'observation' => 'Login, para entrar no aplicativo',
+			'sample_1' => 'pedro',
+			'filled' => true
+		],
 		[
 			'name' => 'email',
 			'observation' => 'Email do representante.',
