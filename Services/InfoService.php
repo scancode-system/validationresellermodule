@@ -35,7 +35,8 @@ class InfoService extends InfoValidationService
 		return [
 			'name' => InfoValidationsService::STRING_FORMAT, 
 			'email' => InfoValidationsService::STRING_FORMAT,
-			'password' => InfoValidationsService::STRING_FORMAT
+			'password' => InfoValidationsService::STRING_FORMAT,
+			'login' => InfoValidationsService::STRING_FORMAT
 		];
 	}
 
